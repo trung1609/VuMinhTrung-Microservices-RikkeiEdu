@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -21,7 +24,10 @@ public class Customer {
 
     private String name;
 
-    private String email;
+    private String phone;
 
+    private String address;
 
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 }

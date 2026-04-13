@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="GradleMigrationSettings" migrationVersion="1" />
-=======
->>>>>>> 5172e660f1390a1a2961741eb822a56b4f89c27d
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Customer-Service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="22" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Customer-Service" />
@@ -17,11 +13,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Product-Service" />
-<<<<<<< HEAD
-        <option name="gradleJvm" value="ms-17" />
-=======
-        <option name="gradleJvm" value="#JAVA_HOME" />
->>>>>>> 5172e660f1390a1a2961741eb822a56b4f89c27d
+        <option name="gradleJvm" value="22" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Product-Service" />
