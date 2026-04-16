@@ -21,6 +21,11 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     private final OrderService orderService;
 
+    @GetMapping("/health-check")
+    public ResponseEntity<String> healthCheck() {
+        return new ResponseEntity<>("Order Service is Up", HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<ApiResponse<OrderResponse>> createOrder(@Valid @RequestBody CreateOrderRequest request) {
         return new ResponseEntity<>(orderService.createOrder(request), HttpStatus.CREATED);
@@ -31,7 +36,7 @@ public class OrderController {
         return new ResponseEntity<>(orderService.getOrderDetail(orderId), HttpStatus.OK);
     }
 
-    @PutMapping("/{orderId}")
+    @PutMapping("/{orderId}/status")
     public ResponseEntity<ApiResponse<UpdateOrderStatusResponse>> updateOrderStatus(@PathVariable Long orderId,
                                                                                     @Valid @RequestBody UpdateOrderStatusRequest request) throws ResourceNotFoundException, InvalidDataException {
         return new ResponseEntity<>(orderService.updateOrderStatus(orderId, request), HttpStatus.OK);
