@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.net.ConnectException;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -44,6 +45,32 @@ public class GlobalExceptionHandler {
                         .timestamp(LocalDateTime.now())
                         .build(),
                 HttpStatus.NOT_FOUND
+        );
+    }
+
+    @ExceptionHandler(InvalidDataException.class)
+    public ResponseEntity<ApiResponseError> handleInvalidDataException(InvalidDataException ex) {
+        return new ResponseEntity<>(
+                ApiResponseError.builder()
+                        .error(Map.of("error", ex.getMessage()))
+                        .message("Invalid data")
+                        .status(HttpStatus.BAD_REQUEST.value())
+                        .timestamp(LocalDateTime.now())
+                        .build(),
+                HttpStatus.BAD_REQUEST
+        );
+    }
+
+    @ExceptionHandler(ServerErrorException.class)
+    public ResponseEntity<ApiResponseError> handleServerError(ServerErrorException ex) {
+        return new ResponseEntity<>(
+                ApiResponseError.builder()
+                        .error(Map.of("error", ex.getMessage()))
+                        .message("Internal server error")
+                        .status(HttpStatus.SERVICE_UNAVAILABLE.value())
+                        .timestamp(LocalDateTime.now())
+                        .build(),
+                HttpStatus.SERVICE_UNAVAILABLE
         );
     }
 }

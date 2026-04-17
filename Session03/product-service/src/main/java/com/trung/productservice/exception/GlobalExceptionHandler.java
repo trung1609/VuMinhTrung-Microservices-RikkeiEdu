@@ -46,4 +46,17 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND
         );
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponseError> handleAllExceptions(Exception ex) {
+        return new ResponseEntity<>(
+                ApiResponseError.builder()
+                        .error(Map.of("error", ex.getMessage()))
+                        .message("Internal server error")
+                        .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                        .timestamp(LocalDateTime.now())
+                        .build(),
+                HttpStatus.INTERNAL_SERVER_ERROR
+        );
+    }
 }

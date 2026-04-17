@@ -32,4 +32,11 @@ public class ProductController {
     public ResponseEntity<List<ProductResponseDTO>> getAllProducts(){
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
+
+    @PutMapping("/reduce-stock")
+    public ResponseEntity<?> reduceStock(@RequestParam Long productId,
+                                         @RequestParam Integer quantity) throws ResourceNotFoundException {
+        productService.reduceStock(productId, quantity);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

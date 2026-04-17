@@ -14,7 +14,4 @@ public class OrderCreateRequest {
 
     @Min(value = 0, message = "Quantity must be greater than 0")
     private Integer quantity;
-
-    @Min(value = 1, message = "Price must be greater than 0")
-    private Double priceProduct;
 }

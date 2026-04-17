@@ -38,4 +38,17 @@ public class ProductServiceImpl implements ProductService {
                 .map(ProductMapper::toDTO)
                 .toList();
     }
+
+    @Override
+    public void reduceStock(Long productId, Integer quantity) throws ResourceNotFoundException {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
+
+        if (product.getStockQuantity() < quantity) {
+            throw new IllegalArgumentException("Insufficient stock for product id: " + productId);
+        }
+
+        product.setStockQuantity(product.getStockQuantity() - quantity);
+        productRepository.save(product);
+    }
 }

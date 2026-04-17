@@ -10,4 +10,5 @@ public interface ProductService {
     ProductResponseDTO createProduct(ProductRequestDTO requestDTO);
     ProductResponseDTO getProductById(Long id) throws ResourceNotFoundException;
     List<ProductResponseDTO> getAllProducts();
+    void reduceStock(Long productId, Integer quantity) throws ResourceNotFoundException;
 }

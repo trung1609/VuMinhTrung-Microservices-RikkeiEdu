@@ -2,7 +2,9 @@ package com.trung.orderservice.controller;
 
 import com.trung.orderservice.dto.OrderCreateRequest;
 import com.trung.orderservice.dto.OrderResponse;
+import com.trung.orderservice.exception.InvalidDataException;
 import com.trung.orderservice.exception.ResourceNotFoundException;
+import com.trung.orderservice.exception.ServerErrorException;
 import com.trung.orderservice.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +19,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest request){
+    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest request) throws InvalidDataException, ServerErrorException {
         return new ResponseEntity<>(orderService.createOrder(request), HttpStatus.CREATED);
     }
 
