@@ -1,0 +1,14 @@
+package com.trung.productservice.service;
+
+import com.trung.productservice.dto.ProductRequestDTO;
+import com.trung.productservice.dto.ProductResponseDTO;
+import com.trung.productservice.exception.ResourceNotFoundException;
+
+import java.util.List;
+
+public interface ProductService {
+    ProductResponseDTO createProduct(ProductRequestDTO requestDTO);
+    ProductResponseDTO getProductById(Long id) throws ResourceNotFoundException;
+    List<ProductResponseDTO> getAllProducts();
+    void reduceStock(Long productId, Integer quantity) throws ResourceNotFoundException;
+}
