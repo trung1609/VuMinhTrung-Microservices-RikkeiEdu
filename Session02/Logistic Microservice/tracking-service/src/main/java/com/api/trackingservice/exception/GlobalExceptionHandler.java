@@ -1,7 +1,6 @@
-package com.trung.orderservice.exception;
+package com.api.trackingservice.exception;
 
-import com.trung.orderservice.dto.response.ApiResponse;
-import org.apache.coyote.BadRequestException;
+import com.api.trackingservice.dto.ApiResponse;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -28,6 +26,19 @@ public class GlobalExceptionHandler {
                 ApiResponse.builder()
                         .data(errors)
                         .message("Validation failed")
+                        .success(false)
+                        .statusCode(HttpStatus.BAD_REQUEST.value())
+                        .build(),
+                HttpStatus.BAD_REQUEST
+        );
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiResponse<Object>> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
+        return new ResponseEntity<>(
+                ApiResponse.builder()
+                        .data(null)
+                        .message("Tracking status is not valid. Allowed values are: PENDING, SHIPPED, DELIVERED, CANCELLED")
                         .success(false)
                         .statusCode(HttpStatus.BAD_REQUEST.value())
                         .build(),

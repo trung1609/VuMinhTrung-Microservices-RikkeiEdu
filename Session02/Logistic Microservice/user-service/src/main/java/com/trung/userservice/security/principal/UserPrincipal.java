@@ -3,6 +3,7 @@ package com.trung.userservice.security.principal;
 import com.trung.userservice.constant.UserStatus;
 import com.trung.userservice.entity.Users;
 import lombok.Builder;
+import lombok.Getter;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Builder
+@Getter
 public class UserPrincipal implements UserDetails {
 
     private Users user;
@@ -48,6 +50,6 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return user.getStatus().equals(UserStatus.ACTIVE.name());
+        return user.getStatus() == UserStatus.ACTIVE;
     }
 }
