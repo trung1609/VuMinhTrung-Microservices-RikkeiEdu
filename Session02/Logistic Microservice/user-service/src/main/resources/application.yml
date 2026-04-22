@@ -1,0 +1,27 @@
+jwt:
+    expiration: 86400000
+    secret: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+server:
+    port: 8081
+spring:
+    application:
+        name: user-service
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: 123456
+        url: jdbc:postgresql://localhost:5432/user_service
+        username: postgres
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8686/eureka/
+        fetch-registry: true
+        register-with-eureka: true

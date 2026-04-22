@@ -14,6 +14,7 @@ import com.trung.shippingservice.repository.ShippingRepository;
 import com.trung.shippingservice.service.ShippingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,10 +24,15 @@ import java.util.List;
 public class ShippingServiceImpl implements ShippingService {
     private final ShippingRepository shippingRepository;
     private final CarrierRepository carrierRepository;
-
+    private final OrderClient orderClient;
     @Override
     public ShippingCreateResponse createShipment(ShippingCreateRequest request) throws ResourceNotFoundException {
         Shipment shipment = new Shipment();
+
+        if (orderClient.getOrderById(request.getOrderId()).getBody() == null) {
+            throw new ResourceNotFoundException("Order not found with id: " + request.getOrderId());
+        }
+
         shipment.setOrderId(request.getOrderId());
         shipment.setStatus(ShippingStatus.CREATED);
         Carrier carrier = carrierRepository.findById(request.getCarrierId()).orElseThrow(

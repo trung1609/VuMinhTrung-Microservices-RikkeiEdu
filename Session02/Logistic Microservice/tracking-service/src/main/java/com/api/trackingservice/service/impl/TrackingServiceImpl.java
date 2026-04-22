@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 public class TrackingServiceImpl implements TrackingService {
     private final TrackingRepository trackingRepository;
     private final TrackingSummaryRepository trackingSummaryRepository;
-
+    private final OrderClient orderClient;
 
     @Override
     public TrackingResponse getTrackingById(Long orderId) throws ResourceNotFoundException {
@@ -38,6 +38,13 @@ public class TrackingServiceImpl implements TrackingService {
         TrackingSummary trackingSummary = trackingSummaryRepository.findById(request.getOrderId())
                 .orElseGet(() -> {
                     TrackingSummary newSummary = new TrackingSummary();
+                    if (orderClient.getOrderById(request.getOrderId()).getBody() == null){
+                        try {
+                            throw new ResourceNotFoundException("Order not found with id: " + request.getOrderId());
+                        } catch (ResourceNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                     newSummary.setOrderId(request.getOrderId());
                     return newSummary;
                 });

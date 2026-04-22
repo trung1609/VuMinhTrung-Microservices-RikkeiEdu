@@ -1,0 +1,24 @@
+server:
+    port: 8082
+spring:
+    application:
+        name: tracking-service
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123456
+        url: jdbc:mysql://localhost:3306/tracking_service?createDatabaseIfNotExist=true
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+        show-sql: true
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8686/eureka/
+        fetch-registry: true
+        register-with-eureka: true

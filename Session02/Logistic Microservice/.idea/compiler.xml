@@ -14,6 +14,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="customer-service" options="-parameters" />
+      <module name="customer-service.main" options="-parameters" />
+      <module name="customer-service.test" options="-parameters" />
+      <module name="eureka-server-service" options="-parameters" />
+      <module name="eureka-server-service.main" options="-parameters" />
+      <module name="eureka-server-service.test" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="order-service.main" options="-parameters" />
       <module name="order-service.test" options="-parameters" />

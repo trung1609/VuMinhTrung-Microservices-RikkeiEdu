@@ -4,6 +4,14 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/eureka-server-service" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/eureka-server-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
         <option name="gradleJvm" value="ms-17" />
         <option name="modules">
@@ -41,6 +49,11 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/../../Session03/customer-service" />
         <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../../Session03/customer-service" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
