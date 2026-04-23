@@ -17,7 +17,7 @@ public class ProductClient {
     private final RestTemplate restTemplate;
 
     public ProductResponseDTO getProductById(Long productId) throws ServerErrorException {
-        String url = "http://localhost:8082/api/v1/products/" + productId;
+        String url = "http://PRODUCT-SERVICE/api/v1/products/" + productId;
 
         try {
             return restTemplate.getForObject(url, ProductResponseDTO.class);
@@ -29,7 +29,7 @@ public class ProductClient {
     }
 
     public void reduceStock(Long productId, Integer quantity) {
-        String url = "http://localhost:8082/api/v1/products/reduce-stock"
+        String url = "http://PRODUCT-SERVICE/api/v1/products/reduce-stock"
                 + "?productId=" + productId
                 + "&quantity=" + quantity;
 

@@ -2,6 +2,7 @@ package com.trung.orderservice.controller;
 
 import com.trung.orderservice.dto.OrderCreateRequest;
 import com.trung.orderservice.dto.OrderResponse;
+import com.trung.orderservice.dto.ProductResponseDTO;
 import com.trung.orderservice.exception.InvalidDataException;
 import com.trung.orderservice.exception.ResourceNotFoundException;
 import com.trung.orderservice.exception.ServerErrorException;
@@ -26,5 +27,10 @@ public class OrderController {
     @GetMapping("/{id}")
     public ResponseEntity<OrderResponse> getOrderById(@PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(orderService.getOrderById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/get-product/{productId}")
+    public ResponseEntity<ProductResponseDTO> getProductFromProductService(@PathVariable Long productId) throws ServerErrorException {
+        return new ResponseEntity<>(orderService.getProductFromProductService(productId), HttpStatus.OK);
     }
 }
