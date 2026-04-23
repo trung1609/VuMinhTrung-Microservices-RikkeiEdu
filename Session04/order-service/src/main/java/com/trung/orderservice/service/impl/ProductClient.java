@@ -22,9 +22,9 @@ public class ProductClient {
         try {
             return restTemplate.getForObject(url, ProductResponseDTO.class);
         }catch (HttpClientErrorException | HttpServerErrorException e) {
-            throw new ServerErrorException("PRODUCT_SERVICE_ERROR");
+            throw new ServerErrorException("Error calling PRODUCT-SERVICE: " + e.getStatusCode());
         }catch (ResourceAccessException e) {
-            throw new ServerErrorException("PRODUCT_SERVICE_UNAVAILABLE");
+            throw new ServerErrorException("Error accessing PRODUCT-SERVICE: " + e.getMessage());
         }
     }
 

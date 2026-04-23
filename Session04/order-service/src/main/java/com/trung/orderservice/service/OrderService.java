@@ -8,7 +8,7 @@ import com.trung.orderservice.exception.ResourceNotFoundException;
 import com.trung.orderservice.exception.ServerErrorException;
 
 public interface OrderService {
-    OrderResponse createOrder(OrderCreateRequest request) throws InvalidDataException, ServerErrorException;
+    OrderResponse createOrder(OrderCreateRequest request) throws InvalidDataException, ServerErrorException, ResourceNotFoundException;
     OrderResponse getOrderById(Long id) throws ResourceNotFoundException;
     ProductResponseDTO getProductFromProductService(Long productId) throws ServerErrorException;
 }

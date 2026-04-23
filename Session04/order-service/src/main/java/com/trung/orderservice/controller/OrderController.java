@@ -20,7 +20,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest request) throws InvalidDataException, ServerErrorException {
+    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest request) throws InvalidDataException, ServerErrorException, ResourceNotFoundException {
         return new ResponseEntity<>(orderService.createOrder(request), HttpStatus.CREATED);
     }
 

@@ -26,14 +26,15 @@ public class OrderServiceImpl implements OrderService {
     private final ProductClient productClient;
     private final DiscoveryClient discoveryClient;
     private final RestTemplate restTemplate;
+    private final CustomerClient customerClient;
 
     @Override
     @Transactional
-    public OrderResponse createOrder(OrderCreateRequest request) throws InvalidDataException, ServerErrorException {
-
-        try {
+    public OrderResponse createOrder(OrderCreateRequest request) throws InvalidDataException, ServerErrorException, ResourceNotFoundException {
             ProductResponseDTO product = productClient.getProductById(request.getProductId());
-
+            if (customerClient.getCustomerById(request.getCustomerId()).getBody() == null) {
+                throw new ResourceNotFoundException("Customer not found with id: " + request.getCustomerId());
+            }
             if (product.getStockQuantity() < request.getQuantity()) {
                 throw new InvalidDataException("Insufficient stock for product id: " + request.getProductId());
             }
@@ -47,15 +48,6 @@ public class OrderServiceImpl implements OrderService {
 
             orderRepository.save(orders);
             return OrderMapper.toDTO(orders);
-        }catch (ServerErrorException e) {
-            if (e.getMessage().contains("PRODUCT_SERVICE_ERROR")) {
-                throw new ServerErrorException("Failed to fetch information from PRODUCT_SERVICE");
-            }
-            if (e.getMessage().contains("PRODUCT_SERVICE_UNAVAILABLE")) {
-                throw new ServerErrorException("Product service is currently unavailable. Please try again later.");
-            }
-            throw e;
-        }
     }
 
     @Override
