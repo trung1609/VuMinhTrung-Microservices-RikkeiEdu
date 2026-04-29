@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: user-service
+              uri: lb://user-service
+              predicates:
+                - Path=/api/v1/users/**
+            - id: tracking-service
+              uri: lb://tracking-service
+              predicates:
+                - Path=/api/v1/trackings/**
+            - id: shipping-service
+              uri: lb://shipping-service
+              predicates:
+                - Path=/api/v1/shipments/**
+            - id: order-service
+              uri: lb://order-service
+              predicates:
+                - Path=/api/v1/orders/**
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8686/eureka/
+    fetch-registry: true
+    register-with-eureka: true
