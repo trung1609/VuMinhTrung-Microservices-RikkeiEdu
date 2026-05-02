@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     private final OrderService orderService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest request) throws InvalidDataException, ServerErrorException, ResourceNotFoundException {
         return new ResponseEntity<>(orderService.createOrder(request), HttpStatus.CREATED);
     }

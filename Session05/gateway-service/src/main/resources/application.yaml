@@ -14,6 +14,12 @@ spring:
               filters:
                 - AddRequestHeader=X-Request-Source, Gateway
                 - AddResponseHeader=X-Response-Source, Gateway
+            - id: order-service
+              uri: lb://order-service
+              predicates:
+                - Path=/v1/order-api/**
+              filters:
+                - RewritePath=/v1/order-api/(?<segment>.*), /api/v1/orders/${segment}
 
 eureka:
   client:
