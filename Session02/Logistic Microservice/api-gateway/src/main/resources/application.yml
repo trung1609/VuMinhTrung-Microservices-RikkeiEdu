@@ -22,8 +22,11 @@ spring:
               uri: lb://order-service
               predicates:
                 - Path=/api/v1/orders/**
-
-
+              filters:
+                - AddRequestHeader=token, abcdzya
+                - AddResponseHeader=authen, true
+server:
+  port: 8888
 eureka:
   client:
     serviceUrl:

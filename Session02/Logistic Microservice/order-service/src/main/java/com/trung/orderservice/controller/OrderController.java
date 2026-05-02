@@ -22,7 +22,8 @@ public class OrderController {
     private final OrderService orderService;
 
     @GetMapping("/health-check")
-    public ResponseEntity<String> healthCheck() {
+    public ResponseEntity<String> healthCheck(@RequestParam(required = false) String token) {
+        System.out.println("Token: " +token);
         return new ResponseEntity<>("Order Service is Up", HttpStatus.OK);
     }
 
