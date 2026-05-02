@@ -5,6 +5,6 @@ import com.api.appointmentservice.entity.Appointment;
 import java.util.List;
 
 public interface AppointmentService {
-    Appointment createAppointment(Appointment appointment);
+    Object createAppointment(Appointment appointment);
     List<Appointment> getAllAppointments();
 }
