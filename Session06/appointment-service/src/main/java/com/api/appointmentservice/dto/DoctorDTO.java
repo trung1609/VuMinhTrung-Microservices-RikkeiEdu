@@ -1,4 +1,4 @@
-package com.api.doctorservice.dto;
+package com.api.appointmentservice.dto;
 
 import lombok.*;
 
