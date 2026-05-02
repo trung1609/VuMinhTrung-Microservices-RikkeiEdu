@@ -1,0 +1,16 @@
+package com.api.doctorservice.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class DoctorDTO {
+    private Long id;
+    private String name;
+    private String specialization;
+}

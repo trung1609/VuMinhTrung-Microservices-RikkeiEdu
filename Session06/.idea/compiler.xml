@@ -7,13 +7,16 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.46/a5cfe99fdf320e84955ef653f2ce1bf789d11385/lombok-1.18.46.jar" />
         </processorPath>
-        <module name="patient-service.main" />
-        <module name="patient-service.test" />
+        <module name="doctor-service.test" />
+        <module name="doctor-service.main" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="doctor-service" options="-parameters" />
+      <module name="doctor-service.main" options="-parameters" />
+      <module name="doctor-service.test" options="-parameters" />
       <module name="medical-discovery-server" options="-parameters" />
       <module name="medical-discovery-server.main" options="-parameters" />
       <module name="medical-discovery-server.test" options="-parameters" />
