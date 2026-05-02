@@ -23,8 +23,8 @@ public class LoggingFilter extends OncePerRequestFilter implements Ordered {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        request.getPathInfo();
-        log.info("Incoming request: {}",  request.getRequestURI());
+        String path = request.getRequestURI();
+        log.info("Incoming request: {}",  path);
         filterChain.doFilter(request, response);
     }
 }
