@@ -1,30 +1,28 @@
 package com.api.gatewayservice.config;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
 
 import java.io.IOException;
 
 @Component
 @Slf4j
-public class LoggingFilter extends OncePerRequestFilter implements Ordered {
+public class LoggingFilter implements GlobalFilter,Ordered {
     @Override
     public int getOrder() {
         return -1;
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-        String path = request.getRequestURI();
-        log.info("Incoming request: {}",  path);
-        filterChain.doFilter(request, response);
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        String path = exchange.getRequest().getPath().toString();
+        log.info("Incoming request to: {}", path);
+        return chain.filter(exchange);
     }
 }
