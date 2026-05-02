@@ -13,6 +13,7 @@ spring:
                 - Path=/api/v1/customers/**
               filters:
                 - AddRequestHeader=X-Request-Source, Gateway
+                - AddResponseHeader=X-Response-Source, Gateway
 
 eureka:
   client:
