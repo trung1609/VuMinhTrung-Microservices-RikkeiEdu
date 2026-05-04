@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session01/Microservice" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session01/base-project/Customer-Service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session01/base-project/Product-Service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/BTVN/inventory-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/BTVN/notification-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/BTVN/order-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/BTVN/product_service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/BTVN/user-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/Logistic Microservice/eureka-server-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/Logistic Microservice/order-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/Logistic Microservice/shipping-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/Logistic Microservice/tracking-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session02/Logistic Microservice/user-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session03/customer-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session03/order-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session03/product-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session04/customer-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session04/discovery-server" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session04/order-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session04/product-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session05/customer-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session05/discovery-server" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session05/gateway-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session05/order-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session05/product-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session06/appointment-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session06/doctor-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session06/medical-discovery-server" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session06/medical-gateway" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Session06/patient-service" />
+        <option name="gradleJvm" value="22" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

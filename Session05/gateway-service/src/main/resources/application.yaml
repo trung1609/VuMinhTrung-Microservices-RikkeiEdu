@@ -11,7 +11,7 @@ spring:
             - Path=/api/v1/customers/**
           filters:
             - AddRequestHeader=X-Request-Source, Gateway
-            - AddResponseHeader=X-Response-Source, Gateway
+            - AddResponseHeader=X-System-Name, Api-Gateway-Service
         - id: order-service
           uri: lb://order-service
           predicates:
