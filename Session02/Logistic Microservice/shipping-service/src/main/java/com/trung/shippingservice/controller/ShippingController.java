@@ -5,6 +5,8 @@ import com.trung.shippingservice.exception.ResourceNotFoundException;
 import com.trung.shippingservice.service.ShippingService;
 import com.trung.shippingservice.service.impl.OrderOpenFeign;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -13,13 +15,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/v1/shipments")
 @RequiredArgsConstructor
+@RefreshScope
 public class ShippingController {
     private final ShippingService shippingService;
     private final RestTemplate restTemplate;
     private final OrderOpenFeign orderOpenFeign;
+
+    @Value("${test.username}")
+    private String username;
 
     @PostMapping("/create-order")
     public ResponseEntity<ApiResponse<OrderResponse>> createOrder(@RequestBody CreateOrderRequest request) {
@@ -53,5 +61,10 @@ public class ShippingController {
     @GetMapping("/{id}")
     public ResponseEntity<ShippingResponse> getShipment(@PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(shippingService.getShipment(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<Map<String,String>> test() {
+        return new ResponseEntity<>(Map.of("username", username), HttpStatus.OK);
     }
 }

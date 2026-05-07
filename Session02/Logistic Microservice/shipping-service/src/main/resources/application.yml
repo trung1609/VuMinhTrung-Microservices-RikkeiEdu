@@ -1,23 +1,45 @@
 server:
-    port: 8083
+  port: 8083
+
 spring:
-    application:
-        name: shipping-service
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: 123456
-        url: jdbc:mysql://localhost:3306/shipping_service?createDatabaseIfNotExist=true
-        username: root
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                format_sql: true
-        show-sql: true
+  application:
+    name: shipping-service
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://localhost:3306/shipping_service?createDatabaseIfNotExist=true
+    username: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+
 eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8686/eureka/
-        fetch-registry: true
-        register-with-eureka: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8686/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
