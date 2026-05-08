@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: resilience4j
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventoryService:
+        registerHealthIndicator: true # Hiển thị trạng thái lên /actuator/health
+        slidingWindowSize: 10         # Lưu lịch sử 10 request gần nhất
+        failureRateThreshold: 50      # Nếu >= 5 request lỗi (50%), cầu dao sẽ nhảy (OPEN)
+        waitDurationInOpenState: 15s  # Đợi 15 giây rồi hé cửa (HALF-OPEN) thử lại
+
+  retry:
+    instances:
+      inventoryService:
+        maxAttempts: 3                # Gọi lỗi thì tự động gọi lại (tổng cộng 3 lần)
+        waitDuration: 1s              # Nghỉ 1 giây giữa mỗi lần gọi lại (tránh spam server đứt hơi)
+
+  ratelimiter:
+    instances:
+      inventoryService:
+        limitForPeriod: 10            # Chỉ cho phép tối đa 10 request
+        limitRefreshPeriod: 1s        # Reset lại quota 10 request đó mỗi 1 giây (10 req/s)

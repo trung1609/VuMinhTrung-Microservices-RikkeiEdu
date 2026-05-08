@@ -1,6 +1,8 @@
 spring:
   application:
     name: api-gateway
+  profiles:
+    active: dev
   cloud:
     gateway:
       server:
@@ -25,14 +27,8 @@ spring:
               filters:
                 - AddRequestHeader=token, abcdzya
                 - AddResponseHeader=authen, true
-<<<<<<< HEAD
-<<<<<<< HEAD
     config:
       import: optional:configserver:http://localhost:8888/
-=======
->>>>>>> parent of baa91aa (Add Spring Cloud Config support across services, update Gradle and application YAML files, and enhance Shipping-Service with RabbitMQ and Bus configurations.)
-=======
->>>>>>> parent of baa91aa (Add Spring Cloud Config support across services, update Gradle and application YAML files, and enhance Shipping-Service with RabbitMQ and Bus configurations.)
 server:
   port: 8888
 eureka:

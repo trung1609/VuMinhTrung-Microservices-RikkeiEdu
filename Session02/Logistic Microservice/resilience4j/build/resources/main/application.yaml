@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: resilience4j
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      payService:
+        registerHealthIndicator: true # Hiển thị trạng thái lên /actuator/health
+        slidingWindowSize: 5         # Lưu lịch sử 10 request gần nhất
+        failureRateThreshold: 50      # Nếu >= 5 request lỗi (50%), cầu dao sẽ nhảy (OPEN)
+        waitDurationInOpenState: 20s  # Đợi 5 giây rồi hé cửa (HALF-OPEN) thử lại
+  timelimiter:
+    instances:
+      pay-service:
+        timeoutDuration: 5s # Quá 5s là báo lỗi TimeoutException, nhảy vào fallback
+        cancelRunningFuture: true
+
+  retry:
+    instances:
+      payService:
+        maxAttempts: 3                # Gọi lỗi thì tự động gọi lại (tổng cộng 3 lần)
+        waitDuration: 1s              # Nghỉ 1 giây giữa mỗi lần gọi lại (tránh spam server đứt hơi)
+
+  ratelimiter:
+    instances:
+      payService:
+        limitForPeriod: 5            # Chỉ cho phép tối đa 10 request
+        limitRefreshPeriod: 10s  # Reset lại quota 10 request đó mỗi 1 giây (10 req/s)
+        timeout-duration: 0s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+server:
+  port: 9898
