@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.7' // <--- SỬA LẠI THÀNH 1.1.7 TẠI ĐÂY
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'resilience4j'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 1. Thư viện Web chuẩn của Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // 2. BẮT BUỘC: Thư viện AOP để các Annotation (@CircuitBreaker, @Retry) hoạt động
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // 3. Thư viện Resilience4j Native dành riêng cho Spring Boot 3
+    implementation 'io.github.resilience4j:resilience4j-spring-boot3:2.2.0'
+
+    // 4. Actuator để theo dõi trạng thái cầu dao (Health Check)
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Test (Sửa lại tên chuẩn)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompileOnly 'org.projectlombok:lombok'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
