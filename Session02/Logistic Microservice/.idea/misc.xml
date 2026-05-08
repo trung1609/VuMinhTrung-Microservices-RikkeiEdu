@@ -3,8 +3,6 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/api-gateway" />
-    <file type="web" url="file://$PROJECT_DIR$/config-server-service" />
-    <file type="web" url="file://$PROJECT_DIR$/eureka-server-service" />
     <file type="web" url="file://$PROJECT_DIR$/order-service" />
     <file type="web" url="file://$PROJECT_DIR$/resilience4j" />
     <file type="web" url="file://$PROJECT_DIR$/shipping-service" />
