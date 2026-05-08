@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-freemarker:4.0.5" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.boot" artifactId="spring-boot-freemarker" version="4.0.5" baseVersion="4.0.5" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-freemarker/4.0.5/f68ad5a5578f71bd7250c2eb4a2d7ce5e63fb88c/spring-boot-freemarker-4.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-freemarker/4.0.5/6409ed9b494c3f2ffae9a6f2c1c9c548a75f2f0a/spring-boot-freemarker-4.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

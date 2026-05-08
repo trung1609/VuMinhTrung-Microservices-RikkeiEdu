@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-jackson2:4.0.5" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.boot" artifactId="spring-boot-jackson2" version="4.0.5" baseVersion="4.0.5" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-jackson2/4.0.5/e49aa5e07c0f4e2e1bbbccef8e4a72d7f6b9e46e/spring-boot-jackson2-4.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-jackson2/4.0.5/79caf976d34a97328f28c230112e9642303a5c0c/spring-boot-jackson2-4.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

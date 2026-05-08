@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-amqp:4.0.6" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.boot" artifactId="spring-boot-amqp" version="4.0.6" baseVersion="4.0.6" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-amqp/4.0.6/87047c7d35228361223555e438fce1f18dbe3a07/spring-boot-amqp-4.0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-amqp/4.0.6/b9a910bcd662d6245b9e04a4317fbfb48e2ebbd5/spring-boot-amqp-4.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

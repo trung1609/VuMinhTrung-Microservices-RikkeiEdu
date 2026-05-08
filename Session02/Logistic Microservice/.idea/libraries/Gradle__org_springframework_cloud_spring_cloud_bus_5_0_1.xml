@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-bus:5.0.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.cloud" artifactId="spring-cloud-bus" version="5.0.1" baseVersion="5.0.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-bus/5.0.1/5f5ce416d074a74289fd210f4d94b98ef8d7ad96/spring-cloud-bus-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-bus/5.0.1/f76ac672de5e90c90d90de8dfd265a915099cd6a/spring-cloud-bus-5.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

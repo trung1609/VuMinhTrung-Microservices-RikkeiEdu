@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-integration:4.0.6" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.boot" artifactId="spring-boot-integration" version="4.0.6" baseVersion="4.0.6" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-integration/4.0.6/f02fc0bdcde63d946127678afd7a6ca66c083362/spring-boot-integration-4.0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-integration/4.0.6/e1485447f5f359327320a4607df8e9740d1a737c/spring-boot-integration-4.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

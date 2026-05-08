@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.netty:netty-transport-native-io_uring:linux-x86_64:4.2.12.Final" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.netty" artifactId="netty-transport-native-io_uring" version="4.2.12.Final" baseVersion="4.2.12.Final" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-io_uring/4.2.12.Final/f7a984d53e8afce074a604dce4d1b1ab4618aeee/netty-transport-native-io_uring-4.2.12.Final-linux-x86_64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-io_uring/4.2.12.Final/8a8fef0f1acce9cc472b7e5b6ad201d1c13089b0/netty-transport-native-io_uring-4.2.12.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

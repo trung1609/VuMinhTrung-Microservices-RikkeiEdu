@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework:spring-messaging:7.0.7" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework" artifactId="spring-messaging" version="7.0.7" baseVersion="7.0.7" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/7.0.7/5c053835a5c1e561fc3af7a680dbb0ad006be225/spring-messaging-7.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/7.0.7/55a759a51150da7f6826987bb580b983c959dcc6/spring-messaging-7.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
