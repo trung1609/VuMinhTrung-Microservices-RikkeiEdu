@@ -1,0 +1,30 @@
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:8686/eureka/
+# Cấu hình api gate way
+spring:
+  application:
+        name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id : order-service-eureka
+              uri : lb://order-service-eureka
+              predicates:
+                - Path=/orders/**,/api/v1/orders/**,/xyz/api/v2/products/**
+              filters:
+                - AddRequestHeader=token,abcxyz
+                - AddResponseHeader=authen,true
+#                - PrefixPath=/api
+                - StripPrefix=1
+            - id: ship-service
+              uri : lb://ship-service
+              predicates:
+                - Path=/api/v1/ships/**
+server:
+  port: 9898

@@ -1,0 +1,42 @@
+server:
+    port: 8083
+spring:
+    application:
+        name: shipping-service
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123456
+        url: jdbc:mysql://localhost:3306/shipping_service?createDatabaseIfNotExist=true
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+        show-sql: true
+
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: shipping-group
+            auto-offset-reset: earliest
+            # Khai báo ErrorHandlingDeserializer ở đây
+            key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            properties:
+                # Chỉ định delegate thực sự xử lý dữ liệu
+                spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+                spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+                spring.json.trusted.packages: "*"
+                spring.json.use.type.headers: true
+
+                # KEY MAPPING: Phải khớp với bên Producer
+                spring.json.type.mapping: orderCreatedEvent:com.trung.shippingservice.event.OrderCreatedEvent
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8686/eureka/
+        fetch-registry: true
+        register-with-eureka: true
