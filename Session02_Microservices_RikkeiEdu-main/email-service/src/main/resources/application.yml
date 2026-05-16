@@ -1,0 +1,43 @@
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:8686/eureka/
+spring:
+    application:
+        name: email-service-eureka
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: trung8d2005@gmail.com
+        password: ctpjrvmbjzojazsf
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: order-create-groupId-v3
+            auto-offset-reset: earliest
+            # Khai báo ErrorHandlingDeserializer ở đây
+            key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+            properties:
+                # Chỉ định delegate thực sự xử lý dữ liệu
+                spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+                spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+                spring.json.trusted.packages: "*"
+                spring.json.use.type.headers: true
+
+                # KEY MAPPING: Phải khớp với bên Producer
+                spring.json.value.type.mapping: orderCreatedEvent:com.example.emailservice.event.OrderCreatedEvent
+
+#                spring.json.value.default.type: com.example.emailservice.OrderCreateDTO
+
+server:
+    port: 8585

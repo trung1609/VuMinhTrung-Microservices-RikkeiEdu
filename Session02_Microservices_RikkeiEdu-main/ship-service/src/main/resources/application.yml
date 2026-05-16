@@ -1,0 +1,58 @@
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:8686/eureka/
+server:
+    port: 8787
+spring:
+<<<<<<< HEAD
+<<<<<<< HEAD
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  application:
+        name: shiping-service
+  profiles:
+    active: dev
+=======
+  application:
+        name: shiping-service
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88
+=======
+  application:
+        name: shiping-service
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+test:
+<<<<<<< HEAD
+<<<<<<< HEAD
+  username: hugnhx
+=======
+  username: minhtx
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88
+=======
+  username: minhtx
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88
+management:
+  endpoints:
+    web:
+      exposure:
+<<<<<<< HEAD
+<<<<<<< HEAD
+        include: 'refresh' # Hoặc dùng '*' để mở tất cả các endpoint
+
+=======
+        include: refresh
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88
+=======
+        include: refresh
+>>>>>>> 7b6ed4a36d4ce92847e1a1a11b9d6a44b9db3f88

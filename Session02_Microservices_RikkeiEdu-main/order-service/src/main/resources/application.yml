@@ -1,0 +1,33 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8686/eureka/
+spring:
+  application:
+    name: order-service-eureka
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: 123456
+    url: jdbc:postgresql://localhost:5432/order_service
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  kafka:
+     bootstrap-servers: localhost:9092
+     producer:
+       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+       acks: all
+       retries: 3
+       properties:
+         spring.json.use.type.headers: true
+         # Nhãn này để cho Consumer biết loại dữ liệu
+         spring.json.type.mapping: orderCreatedEvent:com.trung.orderservice.dto.event.OrderCreatedEvent
